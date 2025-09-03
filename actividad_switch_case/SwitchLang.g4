@@ -11,22 +11,24 @@ sentencia
 
 // Regla para switch statement
 switchStmt
-    : SWITCH LPAREN ID RPAREN LBRACE (sentencia SEMI?)*
+    : (SWITCH LPAREN ID RPAREN LBRACE (sentencia SEMI?)* RBRACE)+
     ;
 
 // Asignaciones entre braces del switch
 asignacion
-    : (case INT TPOINT ID ASSIGN INT SEMI)+ default TPOINT ID ASSIGN INT
+    : (CASE INT TPOINT ID ASSIGN INT SEMI)+ DEFAULT TPOINT ID ASSIGN INT
     ;
 
 // TOKENS
 SWITCH  : 'switch';
+CASE    : 'case';
+DEFAULT : 'default';
 LPAREN  : '(';
 RPAREN  : ')';
 LBRACE  : '{';
 RBRACE  : '}';
 ASSIGN  : '=';
-ASSIGN  : '=';
+TPOINT  : ':';
 SEMI    : ';';
 
 // Reglas lexicas

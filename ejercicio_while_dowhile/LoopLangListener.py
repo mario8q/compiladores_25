@@ -53,6 +53,24 @@ class LoopLangListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by LoopLangParser#breakStmt.
+    def enterBreakStmt(self, ctx:LoopLangParser.BreakStmtContext):
+        pass
+
+    # Exit a parse tree produced by LoopLangParser#breakStmt.
+    def exitBreakStmt(self, ctx:LoopLangParser.BreakStmtContext):
+        pass
+
+
+    # Enter a parse tree produced by LoopLangParser#continueStmt.
+    def enterContinueStmt(self, ctx:LoopLangParser.ContinueStmtContext):
+        pass
+
+    # Exit a parse tree produced by LoopLangParser#continueStmt.
+    def exitContinueStmt(self, ctx:LoopLangParser.ContinueStmtContext):
+        pass
+
+
     # Enter a parse tree produced by LoopLangParser#condicion.
     def enterCondicion(self, ctx:LoopLangParser.CondicionContext):
         pass

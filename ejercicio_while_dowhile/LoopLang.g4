@@ -7,6 +7,8 @@ sentencia
     : whileStmt
     | doWhileStmt
     | asignacion
+    | breakStmt
+    | continueStmt
     ;
 
 whileStmt
@@ -21,6 +23,14 @@ asignacion
     : ID ASSIGN expr SEMI
     ;
 
+breakStmt
+    : BREAK SEMI
+    ;
+
+continueStmt
+    : CONTINUE SEMI
+    ;
+
 // Reglas auxiliares
 condicion
     : expr ( (LT | GT | EQ | NEQ) expr )?
@@ -33,8 +43,10 @@ expr
     ;
 
 // Palabras clave
-WHILE   : 'while' ;
-DO      : 'do' ;
+WHILE    : 'while' ;
+DO       : 'do' ;
+BREAK    : 'break' ;
+CONTINUE : 'continue' ;
 
 // Símbolos
 LPAREN  : '(' ;
@@ -58,4 +70,3 @@ NEQ     : '!=' ;
 ID      : [a-zA-Z_][a-zA-Z_0-9]* ;
 INT     : [0-9]+ ;
 WS      : [ \t\r\n]+ -> skip ;
-
